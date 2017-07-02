@@ -2,34 +2,31 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var ToDoList = React.createClass({
 	getInitialState: function() {
-  return {todoItems: [
-  	{id: 0, name: 'アイディアを出す'},
-    {id: 1, name: 'サンプルを作る'},
-    {id: 2, name: 'ドキュメントを書く'}
-  ],
-  newItem: ''};
-	},
-  handleEdit: function(event) {
+      return {todoItems: JSON.parse(sessionStorage.getItem('todoItems')), newitem: ''};
+  },
+  handleChange: function(event) {
   	this.setState({newItem: event.target.value});
   },
-  handleAdd: function(event) {
-  	var idName = {id: Date.now(), name: this.state.newItem};
-    var newItems = this.state.todoItems.concat(idName);
+  add: function(event) {
+  	const idName = {id: Date.now(), name: this.state.newItem};
+    const newItems = this.state.todoItems.concat(idName);
+    sessionStorage.setItem('todoItems', JSON.stringify(newItems));
     this.setState({todoItems: newItems});
-    this.setState({newItem: ''})
+    this.setState({newItem: ''});
   },
-  handleRemove: function(i) {
-  	var tempItems = this.state.todoItems;
+  delete: function(i) {
+  	const tempItems = this.state.todoItems;
     tempItems.splice(i, 1);
+    sessionStorage.setItem('todoItems', JSON.stringify(tempItems));
     this.setState({todoItems: tempItems});
   },
   render: function() {
-  	var currentItems = this.state.todoItems.map((item, i) =>
+  	const currentItems = this.state.todoItems.map((item, i) =>
     	<div key={item.id}>
       	<input
         	type="checkbox"
           defaultChecked={false}
-          onChange={() => this.handleRemove(i)}
+          onChange={() => this.delete(i)}
         />{item.name}
       </div>);
       
@@ -38,12 +35,12 @@ var ToDoList = React.createClass({
       <input
       	type="text"
         value={this.state.newItem}
-        onChange={this.handleEdit}
+        onChange={this.handleChange}
       />
       <input
       	type="button"
         value="追加"
-        onClick={this.handleAdd}
+        onClick={this.add}
       />
       <ReactCSSTransitionGroup
       	transitionName="fadingText"
