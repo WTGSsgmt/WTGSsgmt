@@ -1,4 +1,13 @@
-var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+import React from 'react'
+import { render } from 'react-dom'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// import { createStore, applyMiddleware } from 'redux'
+// import { Provider } from 'react-redux'
+// import App from './containers/App'
+// import reducer from './reducers'
+// import thunk from 'redux-thunk'
+// import createLogger from 'redux-logger';
+// var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var ToDoList = React.createClass({
 	getInitialState: function() {
@@ -54,7 +63,7 @@ var ToDoList = React.createClass({
   }
 });
 
-ReactDOM.render(
+render(
 	<ToDoList />,
   document.getElementById('content')
 );
