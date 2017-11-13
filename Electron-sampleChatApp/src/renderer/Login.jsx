@@ -1,3 +1,6 @@
+/**
+ * ログインコンポーネント
+ */
 import React from "react";
 import { Link, hashHistory } from "react-router";
 import Errors from "./Errors";
@@ -83,39 +86,40 @@ export default class Login extends React.Component {
         })
     }
 
-
-
     render() {
         return (
-            <form style={FORM_STYLE} onSubmit={this.handleOnChangeLogin}>
-                <Errors errorMessages={this.state.errors}/>
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        placeholder="email"
-                        onChange={this.handleOnChangeEmail}
-                        value={this.state.email}
-                        />
-                </div>
-                <div className="form-group">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="password"
-                        onChange={this.handleOnChangePassword}
-                        value={this.state.password}
-                        />
-                </div>
-                <div className="form-group">
-                    <button className="btn btn-large btn-default">Login</button>
-                    <div style={SIGNUP_LINK_STYLE}>
-                        <Link to="/signup">Create new account</Link>
+            <div>
+                <h2>ログイン画面</h2>
+                <form style={FORM_STYLE} onSubmit={this.handleOnChangeLogin}>
+                    <Errors errorMessages={this.state.errors}/>
+                    <div className="form-group">
+                        <label>Email address</label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            placeholder="email"
+                            onChange={this.handleOnChangeEmail}
+                            value={this.state.email}
+                            />
                     </div>
-                </div>
-            </form>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="password"
+                            onChange={this.handleOnChangePassword}
+                            value={this.state.password}
+                            />
+                    </div>
+                    <div className="form-group">
+                        <button className="btn btn-large btn-default">Login</button>
+                        <div style={SIGNUP_LINK_STYLE}>
+                            <Link to="/signup">新しいユーザーを作成する</Link>
+                        </div>
+                    </div>
+                </form>
+            </div>
         );
     }
 }

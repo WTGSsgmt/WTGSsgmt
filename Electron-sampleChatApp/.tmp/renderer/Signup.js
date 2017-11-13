@@ -152,7 +152,7 @@ var Signup = function (_React$Component) {
                 return;
             }
 
-            // Firebaseのログイン処理
+            // Firebaseのユーザー作成処理
             _firebaseBrowser2.default.auth().createUserWithEmailAndPassword(email, password).then(function (newUser) {
                 // ユーザー情報更新
                 return newUser.updateProfile({
@@ -171,92 +171,101 @@ var Signup = function (_React$Component) {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
-                "form",
-                { style: SIGNUP_FORM_STYLE, onSubmit: this.handleOnChangeLogin },
-                _react2.default.createElement(_Errors2.default, { errorMessages: this.state.errors }),
+                "div",
+                null,
                 _react2.default.createElement(
-                    "div",
-                    { className: "form-group" },
-                    _react2.default.createElement(
-                        "label",
-                        null,
-                        "Email address"
-                    ),
-                    _react2.default.createElement("input", {
-                        type: "email",
-                        className: "form-control",
-                        placeholder: "email",
-                        onChange: this.handleOnChangeEmail,
-                        value: this.state.email
-                    })
+                    "h2",
+                    null,
+                    "\u30E6\u30FC\u30B6\u30FC\u767B\u9332"
                 ),
                 _react2.default.createElement(
-                    "div",
-                    { className: "form-group" },
+                    "form",
+                    { style: SIGNUP_FORM_STYLE, onSubmit: this.handleOnChangeLogin },
+                    _react2.default.createElement(_Errors2.default, { errorMessages: this.state.errors }),
                     _react2.default.createElement(
-                        "label",
-                        null,
-                        "Password"
-                    ),
-                    _react2.default.createElement("input", {
-                        type: "password",
-                        className: "form-control",
-                        placeholder: "password",
-                        onChange: this.handleOnChangePassword,
-                        value: this.state.password
-                    })
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "form-group" },
-                    _react2.default.createElement(
-                        "label",
-                        null,
-                        "User Name*"
-                    ),
-                    _react2.default.createElement("input", {
-                        type: "text",
-                        className: "form-control",
-                        placeholder: "name",
-                        onChange: this.handleOnChangeName,
-                        value: this.state.name
-                    })
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "form-group" },
-                    _react2.default.createElement(
-                        "label",
-                        null,
-                        "PhotoURL"
-                    ),
-                    _react2.default.createElement("input", {
-                        type: "text",
-                        className: "form-control",
-                        placeholder: "photoURL",
-                        onChange: this.handleOnChangePhotoURL,
-                        value: this.state.photoUrl
-                    })
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "form-group" },
-                    _react2.default.createElement(
-                        "button",
-                        { className: "btn btn-large btn-default" },
-                        "Create new account"
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Email address"
+                        ),
+                        _react2.default.createElement("input", {
+                            type: "email",
+                            className: "form-control",
+                            placeholder: "email",
+                            onChange: this.handleOnChangeEmail,
+                            value: this.state.email
+                        })
                     ),
                     _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: "/login" },
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "Password"
+                        ),
+                        _react2.default.createElement("input", {
+                            type: "password",
+                            className: "form-control",
+                            placeholder: "password",
+                            onChange: this.handleOnChangePassword,
+                            value: this.state.password
+                        })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "User Name*"
+                        ),
+                        _react2.default.createElement("input", {
+                            type: "text",
+                            className: "form-control",
+                            placeholder: "name",
+                            onChange: this.handleOnChangeName,
+                            value: this.state.name
+                        })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
+                        _react2.default.createElement(
+                            "label",
+                            null,
+                            "PhotoURL"
+                        ),
+                        _react2.default.createElement("input", {
+                            type: "text",
+                            className: "form-control",
+                            placeholder: "photoURL",
+                            onChange: this.handleOnChangePhotoURL,
+                            value: this.state.photoUrl
+                        })
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-group" },
                         _react2.default.createElement(
                             "button",
-                            {
-                                type: "button",
-                                style: CANCEL_BUTTON_STYLE,
-                                className: "btn btn-large btn-default"
-                            },
-                            "Cancel"
+                            { className: "btn btn-large btn-default" },
+                            "Create new account"
+                        ),
+                        _react2.default.createElement(
+                            _reactRouter.Link,
+                            { to: "/login" },
+                            _react2.default.createElement(
+                                "button",
+                                {
+                                    type: "button",
+                                    style: CANCEL_BUTTON_STYLE,
+                                    className: "btn btn-large btn-default"
+                                },
+                                "\u30AD\u30E3\u30F3\u30BB\u30EB"
+                            )
                         )
                     )
                 )

@@ -17,7 +17,12 @@ var LINK_STYLE = {
     color: "inherit",
     textDecoration: "none"
 };
-
+/**
+ *
+ * @param props
+ * @returns {XML}
+ * @constructor
+ */
 function RoomItem(props) {
     var selected = props.selected;
     var _props$room = props.room,

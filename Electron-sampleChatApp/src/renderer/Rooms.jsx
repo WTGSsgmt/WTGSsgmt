@@ -27,7 +27,6 @@ export default class Rooms extends React.Component {
         this.db = firebase.database();
         this.handleOnChangeRoomName = this.handleOnChangeRoomName.bind(this);
         this.handleOnSubmit = this.handleOnSubmit.bind(this);
-        this.handleLogout = this.handleLogout.bind(this);
     }
 
     componentDidMount() {
@@ -65,9 +64,10 @@ export default class Rooms extends React.Component {
         });
     }
 
-    handleLogout(e) {
-        firebase.auth().signOut(e).then(() => {
-            hashHistory.push(`/`);
+    handleLogout() {
+        firebase.auth().signOut().then(() => {
+            hashHistory.push(`/login`);
+            console.log("success logout");
         }).catch(err => {
             // this.setState({errors: [err.message]});
             console.log(err.message);
@@ -109,7 +109,6 @@ export default class Rooms extends React.Component {
                         </button>
                     </form>
                     <button className="btn btn-default" style={BUTTON_STYLE} onClick={this.handleLogout}>ログアウト</button>
-                    <Link to="/">ろぐあうとにしたい</Link>
                 </div>
             </div>
         );

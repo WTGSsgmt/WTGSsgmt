@@ -56,7 +56,6 @@ var Rooms = function (_React$Component) {
         _this.db = _firebaseBrowser2.default.database();
         _this.handleOnChangeRoomName = _this.handleOnChangeRoomName.bind(_this);
         _this.handleOnSubmit = _this.handleOnSubmit.bind(_this);
-        _this.handleLogout = _this.handleLogout.bind(_this);
         return _this;
     }
 
@@ -103,9 +102,10 @@ var Rooms = function (_React$Component) {
         }
     }, {
         key: "handleLogout",
-        value: function handleLogout(e) {
-            _firebaseBrowser2.default.auth().signOut(e).then(function () {
-                _reactRouter.hashHistory.push("/");
+        value: function handleLogout() {
+            _firebaseBrowser2.default.auth().signOut().then(function () {
+                _reactRouter.hashHistory.push("/login");
+                console.log("success logout");
             }).catch(function (err) {
                 // this.setState({errors: [err.message]});
                 console.log(err.message);
@@ -170,11 +170,6 @@ var Rooms = function (_React$Component) {
                         "button",
                         { className: "btn btn-default", style: BUTTON_STYLE, onClick: this.handleLogout },
                         "\u30ED\u30B0\u30A2\u30A6\u30C8"
-                    ),
-                    _react2.default.createElement(
-                        _reactRouter.Link,
-                        { to: "/" },
-                        "\u308D\u3050\u3042\u3046\u3068\u306B\u3057\u305F\u3044"
                     )
                 )
             );

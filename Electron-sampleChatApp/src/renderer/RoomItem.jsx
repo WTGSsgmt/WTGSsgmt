@@ -5,7 +5,12 @@ const LINK_STYLE = {
     color: "inherit",
     textDecoration: "none"
 };
-
+/**
+ *
+ * @param props
+ * @returns {XML}
+ * @constructor
+ */
 export default function RoomItem(props) {
     const { selected } = props;
     const { description, key } = props.room;

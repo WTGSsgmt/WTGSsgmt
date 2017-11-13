@@ -1,0 +1,14 @@
+{
+  "name": "electron-samplechatapp",
+  "version": "1.0.0",
+  "description": "Electron-Sample-ChatApp",
+  "main": "js/main/index.js",
+  "scripts": {
+    "copy:resources": "cpx \"prod_resources/**/*\" dist",
+    "copy:photon": "cpx \"node_modules/photon/dist/css/**/*\" dist/css && cpx \"node_modules/photon/dist/fonts/**/*\" dist/fonts",
+    "prebundle": "npm run copy:resources && npm run copy:photon",
+    "bundle": "webpack",
+    "package": "npm run bundle && electron-packager dist \"Electron Chat\" --platform=darwin --arch=x64 --out=release"
+  },
+  "author": "keisuke.s"
+}

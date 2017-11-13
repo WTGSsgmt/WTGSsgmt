@@ -13,8 +13,11 @@ import firebase from "firebase/firebase-browser";
 const appRouting = (
   <Router history={hashHistory}>
     <Route path="/">
+        {/* ログイン画面の描画 */}
         <Route path="login" component={Login} />
+        {/* ユーザー登録画面の描画 */}
         <Route path="signup" component={Signup} />
+        {/* メイン画面の描画 */}
         <Route path="rooms" component={Rooms} >
             <Route path=":roomId" component={Room} />
         </Route>
