@@ -7,6 +7,8 @@ import Rooms from "./Rooms";
 import Room from "./Room";
 import fbConfig from "../main/config.js";
 
+// from "firebase"ではないところは注意．
+// 明示的にWebブラウザ用のモジュールを読み込まないと，認証向けの機能が含まれない．
 import firebase from "firebase/firebase-browser";
 
 // Routingの定義
@@ -27,7 +29,7 @@ const appRouting = (
 
 // Routingの初期化
 if (!location.hash.length) {
-            location.hash = "#/login"
+    location.hash = "#/login"
 }
 
 // Initialize Firebase

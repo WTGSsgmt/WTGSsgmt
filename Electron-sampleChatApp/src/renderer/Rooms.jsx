@@ -69,7 +69,7 @@ export default class Rooms extends React.Component {
             hashHistory.push(`/login`);
             console.log("success logout");
         }).catch(err => {
-            // this.setState({errors: [err.message]});
+            this.setState({errors: [err.message]});
             console.log(err.message);
         });
     }

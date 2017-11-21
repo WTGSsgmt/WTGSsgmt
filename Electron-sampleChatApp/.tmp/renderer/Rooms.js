@@ -103,11 +103,13 @@ var Rooms = function (_React$Component) {
     }, {
         key: "handleLogout",
         value: function handleLogout() {
+            var _this3 = this;
+
             _firebaseBrowser2.default.auth().signOut().then(function () {
                 _reactRouter.hashHistory.push("/login");
                 console.log("success logout");
             }).catch(function (err) {
-                // this.setState({errors: [err.message]});
+                _this3.setState({ errors: [err.message] });
                 console.log(err.message);
             });
         }
@@ -117,7 +119,7 @@ var Rooms = function (_React$Component) {
     }, {
         key: "fetchRooms",
         value: function fetchRooms() {
-            var _this3 = this;
+            var _this4 = this;
 
             // Firebaseデータベースからチャットルームを20件種等
             return this.db.ref("/chatrooms").limitToLast(20).once("value").then(function (snapshot) {
@@ -127,7 +129,7 @@ var Rooms = function (_React$Component) {
                     rooms.push(Object.assign({ key: item.key }, item.val()));
                 });
                 // 取得したオブジェクトの配列をコンポーネントのstateにセット
-                _this3.setState({ rooms: rooms });
+                _this4.setState({ rooms: rooms });
             });
         }
 

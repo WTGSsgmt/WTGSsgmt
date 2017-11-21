@@ -52,6 +52,10 @@ var appRouting = _react2.default.createElement(
 );
 
 // Routingの初期化
+
+
+// from "firebase"ではないところは注意．
+// 明示的にWebブラウザ用のモジュールを読み込まないと，認証向けの機能が含まれない．
 if (!location.hash.length) {
     location.hash = "#/login";
 }

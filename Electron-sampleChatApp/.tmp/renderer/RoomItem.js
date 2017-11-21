@@ -18,7 +18,7 @@ var LINK_STYLE = {
     textDecoration: "none"
 };
 /**
- *
+ * room1つを返す関数
  * @param props
  * @returns {XML}
  * @constructor

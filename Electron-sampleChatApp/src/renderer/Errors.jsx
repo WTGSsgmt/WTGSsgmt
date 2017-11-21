@@ -7,7 +7,12 @@ const ERRORS_STYLE = {
     color: "#E62626",
     backgroundColor: "#FFDDDF"
 };
-
+/**
+ * ErrorsコンポーネントはJSXをreturnするだけの関数
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 export default function Errors(props) {
     const {errorMessages} = props;
     if (!errorMessages || !errorMessages.length) {
