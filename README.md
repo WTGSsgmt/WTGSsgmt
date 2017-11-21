@@ -1,9 +1,9 @@
 # WTGSsgmt
-    - Node.js(https://nodejs.org/ja/) 
-        - npmはNode.js入れると付属しているはずなので，それも確認してください
+    - Node.js(https://nodejs.org/ja/)
+        - npmはNode.js入れると付属しているはずなので，それも確認してください 
             $ npm --version
-        - npmが入っていることが確認できたら，webpackを導入
-            $ npm install -g webpack
-    - Firebase(Googleアカウントあればok) 
+        - npmが入っていることが確認できたら，webpackを導入 
+            $ npm install -g webpack
+     - Firebase(Googleアカウントあればok) 
     
-あたりが入っていれば動くと思います
+あたりを入れておいてください
